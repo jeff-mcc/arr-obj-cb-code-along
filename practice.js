@@ -166,7 +166,7 @@ const box = {}
 
 //////////////////PROBLEM 16////////////////////
 
-//Create a variable called name.  Assign it the value of the firstName property using dot notation.
+//Create a variable called userFirstName.  Assign it the value of the firstName property using dot notation.
 
 const person = {}
 
