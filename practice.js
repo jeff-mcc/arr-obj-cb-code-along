@@ -3,7 +3,7 @@
 // Modify the function below to return the first item of the array that is being passed in
 
 function first(arr) {
-  //Code here
+  return arr[0]
 }
 
 //////////////////PROBLEM 2////////////////////
@@ -11,7 +11,7 @@ function first(arr) {
 // Modify the function below to return the length of the array that is being passed in
 
 function length(arr) {
-  //Code here
+  return arr.length
 }
 
 //////////////////PROBLEM 3////////////////////
@@ -19,7 +19,7 @@ function length(arr) {
 // Modify the function below to return the last item of the array that is being passed in
 
 function last(arr) {
-  //Code here
+  return arr[arr.length-1]
 }
 
 //////////////////PROBLEM 4////////////////////
@@ -27,7 +27,7 @@ function last(arr) {
 // Modify the function below to add the passed in number to the end of the passed in array
 
 function addItem(array, number) {
-  //Code here
+  array.push(number);
   return array
 }
 
@@ -36,7 +36,7 @@ function addItem(array, number) {
 // Modify the function below to remove the last item of the array being passed in
 
 function removeLast(array) {
-  //Code here
+  array.pop();
   return array
 }
 
@@ -45,7 +45,7 @@ function removeLast(array) {
 // Modify the function below to remove the first item of the array being passed in
 
 function removeFirst(array) {
-  //Code here
+  array.shift();
   return array
 }
 
@@ -56,7 +56,7 @@ function removeFirst(array) {
 function maker() {
   var numbers = []
   for (var i = 0; i <= 25; i++) {
-    //Code here
+    numbers[i] = i;
   }
 
   return numbers
@@ -68,9 +68,9 @@ function maker() {
 
 function count31() {
   var numbers = []
-
-  //Code here
-
+  for (let i = 0;i<32;i++){
+    numbers[i] = i;
+  }
   return numbers
 }
 
@@ -86,7 +86,7 @@ function backWards(arr) {
   var newArray = []
 
   for (var i = arr.length - 1; i >= 0; i--) {
-    // code here
+    newArray[arr.length-1-i] = arr[i];
   }
 
   return newArray
@@ -100,7 +100,8 @@ function backWards(arr) {
 // findInArray([0,1,2,3], 4); -> false
 
 function findInArray(arr, value) {
-  // code here
+  let tf = arr.includes(value) ? true : false;
+  return tf
 }
 
 //////////////////PROBLEM 11////////////////////
@@ -114,7 +115,7 @@ function addTen(arr) {
   var newArr = []
 
   for (var i = 0; i < arr.length; i++) {
-    // code here
+    newArr[i] = arr[i]+10;
   }
 
   return newArr
@@ -131,7 +132,7 @@ function personName() {
     age: 29,
     location: 'Orem, UT',
   }
-  return // Code here
+  return person.firstName
 }
 
 //////////////////PROBLEM 13////////////////////
@@ -145,7 +146,7 @@ function personLocation() {
     age: 29,
     location: 'Orem, UT',
   }
-  return // Code Here
+  return person['location']
 }
 
 //////////////////PROBLEM 14////////////////////
@@ -154,7 +155,7 @@ function personLocation() {
 
 const backpack = {}
 
-// Code Here
+backpack.frontPocket = 'compass';
 
 //////////////////PROBLEM 15////////////////////
 
@@ -162,7 +163,7 @@ const backpack = {}
 
 const box = {}
 
-// Code Here
+box['material'] = 'cardboard';
 
 //////////////////PROBLEM 16////////////////////
 
@@ -172,7 +173,7 @@ const person = {}
 
 person['firstName'] = 'sally'
 
-//code here
+let userFirstName = person.firstName;
 
 //////////////////PROBLEM 17////////////////////
 
@@ -186,7 +187,10 @@ person['firstName'] = 'sally'
 // };
 
 function updateUser(user) {
-  // Code Here
+  user.name = "Ryan";
+  user.pwHash = 'superSafe';
+  user.username = 'ryan2020';
+  return user
 }
 
 //////////////////PROBLEM 18////////////////////
@@ -194,20 +198,27 @@ function updateUser(user) {
 //Inside the function updateEmail, update the email property of the passed in object to be the value of the parameter str. Return the updated object.
 
 function updateEmail(obj, str) {
-  // Code here
+  obj.email = str;
+  return obj
 }
 
 //////////////////PROBLEM 19////////////////////
 
 // Write a function called isOldEnough that takes a person obj and checks the age property to see if the person is old enough to enter the club.  If they are 21 or older return true else return false.
 
-// Code here
+function isOldEnough(obj){
+  let passAllow = obj.age>=21 ? true : false ;
+  return passAllow
+}
 
 //////////////////PROBLEM 20////////////////////
 
 //Create a function called addRole that takes in a user object as the first parameter and a string as the second parameter.  The string will represent the user's new role in the system (i.e. admin, creator, editor, visitor). Create a new property on the user object called "role" and assign the passed in string to it, then return the updated object.
 
-// Code here
+function addRole(obj,str){
+  obj.role = str;
+  return obj
+}
 
 ///////////////////////////////////////////////////////
 
@@ -245,6 +256,8 @@ function schoolStatus(status) {
   // } else {
   //   return 'No more video games!'
   // }
+  let ans = status === 'Good' ? 'Wow, great job kiddo!' : 'No more video games!';
+  return ans
 }
 
 //////////////////PROBLEM 22////////////////////
@@ -256,7 +269,8 @@ function schoolStatus(status) {
 // If age is greater than 18, return: Somebody is really getting up there, huh?
 
 function messageBasedOnAge(age) {
-  //code here
+  let ans = age < 18 ? 'Not quite old enough, sorry.' : age === 18 ? 'Congrats on being an adult!' : 'Somebody is really getting up there, huh?';
+  return ans
 }
 
 //////////////////PROBLEM 23////////////////////
@@ -264,7 +278,9 @@ function messageBasedOnAge(age) {
 // Create a function called outerFn, that takes in a callback as a parameter, and then returns that callback invoked.
 // To see it working, invoke outerFn at the bottom, passing in the InnerFn as the callback. You should now see "The innerFn is a callback!" in the console.
 
-// Create function here
+function outerFn(cb){
+  return cb()
+}
 
 // ===== DO NOT TOUCH CODE BELOW THIS LINE ===== //
 function innerFn() {
@@ -272,7 +288,7 @@ function innerFn() {
 }
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
-// Invoke function here
+outerFn(innerFn())
 
 //////////////////PROBLEM 24////////////////////
 
@@ -280,7 +296,9 @@ function innerFn() {
 // The fullName function should return the callback, passing in firstName and lastName as parameters.
 // To test, invoke fullName with your first name, last name and the welcomeMessage function as arguments.
 
-// Create function fullName here
+function fullName(firstName,lastName,cb){
+  return cb(firstName,lastName)
+}
 
 // ===== DO NOT TOUCH CODE BELOW THIS LINE ===== //
 function welcomeMessage(first, last) {
@@ -288,7 +306,7 @@ function welcomeMessage(first, last) {
 }
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
-// Invoke fullName below
+fullName('Jeffrey','McClellan',welcomeMessage)
 
 //////////////////PROBLEM 25////////////////////
 
@@ -312,7 +330,10 @@ function drinkAlcohol() {
 
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
-// Create function canDrink here
+function canDrink(anNum,cbDS,cbDA){
+  let canI = anNum < 21 ? cbDS() : cbDA();
+  return canI
+}
 
 //////////////////PROBLEM 26////////////////////
 
@@ -321,4 +342,15 @@ function drinkAlcohol() {
 // Write a function called math that takes in two numbers, and a callback 'operator' as parameters.
 // This function should return a operator invoked with the appropriate arguments.
 
-//Code here
+// let add = (num1,num2) => {return num1+num2;};
+// let multiply = (num1,num2) => {return num1*num2;};
+function add(num1,num2){
+  return num1+num2;
+}
+function multiply(num1,num2){
+  return num1*num2;
+}
+function math(num1,num2,cb){
+  let ans = cb(num1,num2);
+  return ans
+}
